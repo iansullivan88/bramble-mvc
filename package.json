@@ -1,0 +1,27 @@
+{
+  "name": "bramble-mvc",
+  "version": "0.1.0",
+  "description": "An MVC based static site generator",
+  "main": "bramble.js",
+  "devDependencies": {
+      "nodeunit": "~0.8.6",
+      "diveSync": "~0.2.0"
+  },
+  "dependencies": {
+      "q":"~1.0.1",
+      "nunjucks":"~1.0.4",
+      "mkdirp":"~0.3.5",
+      "debug":"~0.8.0"
+  },
+  "scripts": {
+    "test": "node test.js"
+  },
+  "repository": {
+	"type" : "git",
+	"url" : "git://github.com/iansullivan88/bramble-mvc.git"
+  },
+  "keywords": ["node.js", "static", "site", "generator", "mvc", "bramble"],
+  "author": "Ian Sullivan",
+  "license": "MIT",
+  "readmeFilename": "README.md"
+}

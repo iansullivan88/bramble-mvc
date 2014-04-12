@@ -1,0 +1,10 @@
+.git*
+.settings
+.project
+.jshintrc
+.DS_Store
+.npmignore
+
+examples/
+test/
+test.js

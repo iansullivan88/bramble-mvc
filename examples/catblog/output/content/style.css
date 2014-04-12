@@ -1,0 +1,119 @@
+html, body {
+	margin:0;
+	padding:0;
+	background:#eee;
+	min-height:100%;
+}
+
+html {
+	height:100%;
+}
+
+body {
+	position:relative;
+	font-family:"Trebuchet MS", Helvetica, sans-serif;
+}
+
+a, a:link, a:visited , a:hover {
+	color:#000;
+	font-weight:bold;
+	text-decoration:none;
+}
+
+a:hover {
+	text-decoration:underline;
+}
+
+a.disabled {
+	opacity:0.5;
+	text-decoration:none;
+}
+
+header.main {
+	background:#444;
+	color:#fff;
+	padding:50px 0;
+}
+
+h1 {
+	font-size:3em;
+	text-align:center;
+	font-family:'Fredoka One', cursive;
+}
+
+h2 {
+	font-size:1.5em;
+}
+
+section#container {
+	padding:40px 20px 80px 20px;
+	
+}
+
+nav#main-nav  {
+	text-align:center;
+	font-size:1.5em;
+}
+
+nav#main-nav  ol{
+	display:inline-block;
+}
+nav#main-nav  li{
+	display:inline-block;
+	padding:10px;
+	margin:0 20px;
+}
+
+section#mainContent {
+	margin-top:0px;
+}
+
+p.intro {
+	padding:40px 20%;
+	text-align:center;
+}
+
+img#home-image {
+	margin:20px auto;
+	display:block;
+}
+
+ul.features  li{
+	list-style:initial;
+	margin:0 50px;
+	margin-bottom:10px;
+}
+
+article.post {
+	margin-bottom:20px;
+}
+
+article.post header {
+	padding:2px;
+	margin-bottom:10px;
+}
+
+article.post header time {
+	font-size:0.8em;
+}
+
+section#posts article.post header  {
+	border-bottom:1px solid #ccc;
+}
+
+#contact {
+	margin-top:50px;
+	text-align:center;
+}
+
+footer {
+	position:absolute;
+	bottom:0;
+	left:0;
+	right:0;
+	padding:20px;
+	text-align:center;
+	background:#000;
+	color:#fff;
+	font-size:0.8em;
+}
