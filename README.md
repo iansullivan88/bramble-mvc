@@ -109,8 +109,8 @@ The elegant part of Bramble MVC is in determining which urls should be processed
 The `url` function returns the url that was passed in but it also registers the url to be processed by Bramble MVC. After `/` is processed `/blog` and `/home/about` will also be processed. This has the added benefit of ensuring there are strictly zero broken links on your website. The blog pages have the following two links on them:
 
 ```html
-<a href="{{ url("/blog/post/" + post.id) }}">{{post.title}}</a>
-<a href="{{ url("/blog/" + (pageNumber + 1)) }}">older</a>
+<a href="{{ url('/blog/post/' + post.id) }}">{{post.title}}</a>
+<a href="{{ url('/blog/' + (pageNumber + 1)) }}">older</a>
 ```
 
 The first line links to the a page containg the full post - this means the post page itself will be generated. The second links to the next page of posts. Simple! No specifying urls upfront; just like a server based MVC framework!
