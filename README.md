@@ -64,7 +64,7 @@ Routes in Bramble MVC work in exactly the same way as routes in a traditional se
 Url parts that begin with a `:` are variable paramters. Variables can then be extracted from urls and passed to controllers and actions. The special `:action` and `:controller` variables are used to select the controller and action and all other variables are arbitrary and are bound the action arguments of the same name. For example, given the routes above, the following urls would select the following controllers, actions and parameters:
 
 URL  | Controller | Action | Parameters
-- | - | - | -
+--- | --- | --- | ---
 / | home | index | id = null
 /about | about | index | id = null
 /about/contact/uk | about | contact | id = uk
