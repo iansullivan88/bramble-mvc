@@ -97,6 +97,10 @@ article.post header time {
 	font-size:0.8em;
 }
 
+article.post iframe {
+	margin:5px 0;
+}
+
 section#posts article.post header  {
 	border-bottom:1px solid #ccc;
 }
