@@ -16,7 +16,7 @@ exports.createResponse = {
             test.strictEqual(viewOptions.model, model);
             test.done();
         });
-        response.view(model, "test");
+        response.view("test", model);
     },
     'error function rejects the options promise': function (test) {
         var response = responseModule.createResponse();

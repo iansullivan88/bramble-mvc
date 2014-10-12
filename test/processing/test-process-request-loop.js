@@ -7,7 +7,7 @@ exports.createResponse = {
         test.expect(1);
         processRequestLoop(function(url) {
             processedUrls.push(url);
-        }, urlsToProcess).then(function() {
+        }, urlsToProcess, {}).then(function() {
             test.deepEqual(processedUrls, urlsToProcess);
             test.done();
         });
@@ -26,7 +26,7 @@ exports.createResponse = {
                 test.strictEqual(url, "/test4");
             }
             processedUrls++;
-        }, urlsToProcess).then(function() {
+        }, urlsToProcess, {}).then(function() {
             test.done();
         });
     },
@@ -43,7 +43,7 @@ exports.createResponse = {
                 test.ok(false, "Only two urls should be processed");
             }
             processedUrls.push(url);
-        }, urlsToProcess).then(function() {
+        }, urlsToProcess, {}).then(function() {
             test.done();
         });
     },

@@ -20,38 +20,42 @@ var blogRoute = {
 exports.processRequest = {
     'exception is thrown if no route matches': function (test) {
         test.throws(function() {
-            processRequest('/path', [blogRoute], {controller: function() {}});
+            processRequest('/path', '/path', [blogRoute], {controller: function() {}});
         });
         test.done();
     },
     'exception is thrown if no controller matches': function (test) {
         test.throws(function() {
-            processRequest('/', [defaultRoute], {});
+            processRequest('/', '/', [defaultRoute], {});
         });
         test.done();
     },
     'exception is thrown if no action matches': function (test) {
         test.throws(function() {
-            processRequest('/', [defaultRoute], {home:function() {}});
+            processRequest('/', '/', [defaultRoute], {home:function() {}});
         });
         test.done();
     },
     'request url correctly processed': function (test) {
-        var viewModel = {};
-        processRequest('/news/test', [blogRoute, defaultRoute], {test:function(req, res) {
-            this.index = function() {
-                res.view(viewModel);
-            };
-        }}, function(controllerName, viewName, model, resolveUrl) {
-            test.strictEqual(controllerName, "test");
-            test.strictEqual(viewName, "index");
-            test.strictEqual(model, viewModel);
-            
-            return "viewcontent";
+        var expectedViewModel = {},
+            expectedViewName = "something",
+            expectedViewContent = "content";
+        processRequest('/a/b', '/a/b', [{
+            path: "a/:variable1/:variableWithDefault",
+            defaults: {variableWithDefault: "defaultValue"}, 
+            handler:function(req, res) {
+                test.strictEqual(req.parameters.variable1, "b");
+                test.strictEqual(req.parameters.variableWithDefault, "defaultValue");
+                res.view(expectedViewName, expectedViewModel);
+            }
+        }], function(viewName, model, resolveUrl) {
+            test.strictEqual(viewName, expectedViewName);
+            test.strictEqual(model, expectedViewModel);
+            return expectedViewContent;
         }, function(serverPath, fileName, content) {
-            test.strictEqual(serverPath, "/news/test");
+            test.strictEqual(serverPath, "/a/b");
             test.strictEqual(fileName, "index.html");
-            test.strictEqual(content, "viewcontent");
+            test.strictEqual(content, expectedViewContent);
         }).done(test.done);
     },
 };

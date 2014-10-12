@@ -1,11 +1,12 @@
 {
   "name": "bramble-mvc",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "An MVC based static site generator",
   "main": "bramble.js",
   "devDependencies": {
       "nodeunit": "~0.8.6",
-      "diveSync": "~0.2.0"
+      "diveSync": "~0.2.0",
+      "node.extend": "~1.1.2"
   },
   "dependencies": {
       "q":"~1.0.1",
